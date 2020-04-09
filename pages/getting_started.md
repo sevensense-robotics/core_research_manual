@@ -41,12 +41,12 @@ sudo apt install ros-melodic-alphasense-driver-ros
 
 Open a terminal, launch the `nm-connection-editor` and add a new `Ethernet` connection:
 
-![nm_connection_editor](images/nm_connection_editor.png)
+![nm_connection_editor](/images/nm_connection_editor.png)
 
 Name the new connection `alphasense`. Under the `IPv4 Settings` tab, change the
 method to `Manual` and add the following static IP address:
 
-![ip_settings](images/alphasense_ip_setting.png)
+![ip_settings](/images/alphasense_ip_setting.png)
 
 Save the new configuration.
 
@@ -87,7 +87,7 @@ net.core.rmem_max=3145728
 After that, you can launch the Alphasense GUI which will display all available
 image streams:
 
-![viewalphasense](images/viewer.png)
+![viewalphasense](/images/viewer.png)
 
 ### 2) Launching the ROS driver
 
