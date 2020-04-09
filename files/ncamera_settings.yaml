@@ -1,0 +1,43 @@
+camera_config: &standard_camera_config
+  # Exposure control.
+  manual_exp_time_us: 10000         # 10 - 65000
+  auto_exposure_enabled: true       # true/false
+  min_exp_time_us: 50               # 10 - 65000
+  max_exp_time_us: 10000            # 10 - 65000
+  autoexp_speed: 10                 # 1 - 10
+  autoexp_target_median: 70         # 0 - 255
+
+  # Gain control.
+  auto_gain_enabled: false          # true/false
+  autoexp_max_gain : 255            # 0 - 255
+  manual_gain: 1                    # 0 - 255
+
+  # Auto exposure ROI control.
+  auto_exposure_roi_enabled: false  # true/false
+  autoexp_start_row: 0              # 0 - 539/1079
+  autoexp_end_row: -1               # -1 - 539/1079
+  autoexp_start_col: 0              # 0 - 719/1439
+  autoexp_end_col: -1               # -1 - 719/1439
+
+  # Extra configuration.
+  rotate_image: false               # true/false
+
+ncamera:
+  # Measurement rates.
+  camera_frequency_hz: 10           # 1 - 75
+  imu_frequency_hz: 200             # 100/200/400
+  gyro_range_deg_per_sec: 2000      # 125/250/500/1000/2000
+
+
+  # Network tuning parameters.
+  inter_packet_delay_us: 1          # 0 - 200
+  pixels_per_packet: 1440           # Needs to be a divisor of the image resolution (height*width).
+
+  # Number of enabled cameras and individual camera configuration.
+  num_cams: 5                       # 1 - 8
+  cams:
+    0: *standard_camera_config
+    1: *standard_camera_config
+    2: *standard_camera_config
+    3: *standard_camera_config
+    4: *standard_camera_config
