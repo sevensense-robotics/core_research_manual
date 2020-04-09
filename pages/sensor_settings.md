@@ -4,7 +4,7 @@
 
 Instead of starting Alphasense with the standard configuration, the driver can
 be given a custom settings file. An example is provided here:
-[ncamera_settings.yaml](files/ncamera_settings.yaml). This can be passed to the
+[ncamera_settings.yaml](/files/ncamera_settings.yaml). This can be passed to the
 driver with one of the commands shown below.
 
 Standalone viewer:
