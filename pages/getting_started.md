@@ -113,4 +113,4 @@ and [rqt_plot](http://wiki.ros.org/rqt_plot) to inspect the images and the IMU
 data.
 
 Find out more about the sensor settings and how to permantently set them
-[here](pages/sensor_settings.md).
+[here](/pages/sensor_settings.md).
