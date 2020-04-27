@@ -6,7 +6,7 @@ it by following these simple steps:
 ## What's in the box?
 
 - **The sensor**: a development kit with 5 cameras and an IMU (synchronized)
-- **Ethernet cable**: for transferring the data
+- **Ethernet cable (3m)**: for transferring the data
 - **AC adapter to sensor cable**: for powering the sensor
 - **12V 25W AC wall adapter** (230V Euro plug)
 
