@@ -122,7 +122,7 @@ The number of enabled cameras can be set with the `num_cams` option. The camera
 ports until the `num_cams` value will be enabled. By disabling camera ports, the
 maximum allowed frame rate of the enabled cameras can be increased.
 
-### Framerate and IMU frequency
+### Frame rate and IMU frequency
 
 The camera frame rate can be set with the `camera_frequency_hz` option. The IMU
 frequency can be set to 100, 200 or 400 Hz with the `imu_frequency_hz` option.
