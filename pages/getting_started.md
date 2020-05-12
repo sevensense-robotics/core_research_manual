@@ -76,8 +76,7 @@ sudo sysctl -w net.core.rmem_max=3145728
 ```
 
 
-As an alternative to the command above, the buffer size can be increased
-permanently by creating a file called
+This setting can be made permanent by creating a file called
 `/etc/sysctl.d/90-increase-network-buffers.conf` with the following content:
 
 ```
