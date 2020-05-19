@@ -39,7 +39,18 @@ sudo apt install ros-melodic-alphasense-driver-ros
 
 ## Setting up the network configuration
 
-Open a terminal, launch the `nm-connection-editor` and add a new `Ethernet` connection:
+In order to connect your Alphasense Core device to your computer, a network
+configuration with a static IP needs to be set up.  The following factory
+default network configuration is used:
+
+| Setting  | Value |
+| ------------------- | ------------- |
+| Host IP Address     | 192.168.77.78  |
+| Subnet Mask         | 255.255.255.0  |
+| (Sensor IP Address) | 192.168.77.77  |
+
+To set this up, open a terminal, launch the `nm-connection-editor` and add a
+new `Ethernet` connection:
 
 ![nm_connection_editor](/images/nm_connection_editor.png)
 
@@ -75,9 +86,7 @@ to do this:
 sudo sysctl -w net.core.rmem_max=3145728
 ```
 
-
-As an alternative to the command above, the buffer size can be increased
-permanently by creating a file called
+This setting can be made permanent by creating a file called
 `/etc/sysctl.d/90-increase-network-buffers.conf` with the following content:
 
 ```
