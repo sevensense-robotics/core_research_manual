@@ -83,14 +83,14 @@ have to be increased.  The error message will contain the corresponding command
 to do this:
 
 ```
-sudo sysctl -w net.core.rmem_max=3145728
+sudo sysctl -w net.core.rmem_max=11485760
 ```
 
 This setting can be made permanent by creating a file called
 `/etc/sysctl.d/90-increase-network-buffers.conf` with the following content:
 
 ```
-net.core.rmem_max=3145728
+net.core.rmem_max=11485760
 ```
 
 After that, you can launch the Alphasense GUI which will display all available
