@@ -9,6 +9,9 @@ your request.
 - [I don’t want to use ROS to access the data, what should I do?](#i-dont-want-to-use-ros-to-access-the-data-what-should-i-do)
 - [Why is my sensor dropping frames?](#why-is-my-sensor-dropping-frames)
 - [Can I use the Alphasense Core driver on an ARM architecture?](#can-i-use-the-alphasense-core-driver-on-an-arm-architecture)
+- [How do I change the IP address of the sensor?](#how-do-i-change-the-ip-address-of-the-sensor)
+- [Can I synchronize the internal clock of the Alphasense Core to an external system?](#can-i-synchronize-the-internal-clock-of-the-alphasense-core-to-an-external-system)
+- [How do I fix "Image receive timed out"?](#how-do-i-fix-image-receive-timed-out)
 
 ## I would like to mount Alphasense Core on my robot, what should I consider?
 
@@ -48,6 +51,7 @@ application independently of ROS or the catkin build system.
 ## Why is my sensor dropping frames?
 
 Please check the following:
+- See the [Maximize network performance](/pages/maximize_network_performance.md) page for guidelines on configuring the system and Alphasense Core for maximal performance.
 - Are you using a Gigabit Ethernet link? The driver will print a warning if
   this is not the case. Alternatively, this can also be verified manually by
   installing the `ethtool` package (`sudo apt install ethtool`) and checking
@@ -65,5 +69,24 @@ Please check the following:
 
 ## Can I use the Alphasense Core driver on an [ARM architecture](https://en.wikipedia.org/wiki/ARM_architecture)?
 
-Precompiled drivers for ARM will be released soon, please contact us if this is
-relevant for your application.
+Yes this is possible. You can install the driver for the `arm64` architecture, see [Installation](/pages/installation_and_upgrade.md#installation).
+
+## How do I change the IP address of the sensor?
+
+The IP can be changed by following the instructions in 
+[Modifying persistent configuration](/pages/configuring_the_network.md#modifying-persistent-configuration).
+
+## Can I synchronize the internal clock of the Alphasense Core to an external system?
+
+Yes, the Alphasense Core supports the PTP (Precision Time Protocol) protocol to synchronize the internal clock over the
+ethernet connection. An example for this will be published soon.
+
+## How do I fix "Image receive timed out"?
+
+The "Image receive timed out" means that the driver is not receiving image stream packets from the Alphasense Core. This can happen because of many reasons. Some commonly occuring reasons are:
+
+* The Alphasense Core is not powered anymore or the ethernet cable is unplugged.
+* The network configuration has been changed.
+* The Alphasense Core is configured to send data to a different host IP, this can be checked with `alphasense show -`.
+* There is another driver running. Only one driver can be running at a time.
+* The `pixels_per_packet` setting is set higher than the MTU of the network interface. See [Network interface MTU](/pages/maximize_network_performance.md#network-interface-mtu).
