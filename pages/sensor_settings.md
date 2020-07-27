@@ -9,13 +9,13 @@ driver with one of the commands shown below.
 
 Standalone viewer:
 
-```
+```console
 viewalphasense --ncamera-settings /path/to/ncamera_settings.yaml
 ```
 
 ROS driver:
 
-```
+```console
 rosrun alphasense_driver_ros alphasense_driver_ros _ncamera_settings:=/path/to/ncamera_settings.yaml
 ```
 
@@ -127,6 +127,24 @@ maximum allowed frame rate of the enabled cameras can be increased.
 The camera frame rate can be set with the `camera_frequency_hz` option. The IMU
 frequency can be set to 100, 200 or 400 Hz with the `imu_frequency_hz` option.
 
+The minimum frame rate is 1Hz. The maximum frame rate depends on the number of cameras,
+the maximum/manual exposure time, and network tuning parameters 
+(`inter_packet_delay_us`/`pixels_per_packet`). The table below gives the absolute 
+maximum frame rates for each number of cameras with exposure at 10us, `inter_packet_delay_us` at 1.0 us and `pixels_per_packet` at 7200.
+
+#### Absolute maximum frame rates in Hz/fps
+
+| Number of Cameras  | Alphasense Core (0.4 MP, Mono) | Alphasense Core (1.6 MP, Mono) |
+| --- | --- | ---|
+| 1 | 75 | 30 |
+| 2 | 75 | 30 |
+| 3 | 75 | 24 |
+| 4 | 72 | 18 |
+| 5 | 58 | 14 |
+| 6 | 48 | 12 |
+| 7 | 41 | 10 |
+| 8 | 35 | 8 |
+
 ### Gyro sensitivity
 
 The sensitivity of the gyroscope can be set with the `gyro_range_deg_per_sec`.
@@ -135,8 +153,11 @@ higher will decrease the gyro sensitivity.
 
 ### Network tuning
 
-The bandwidth used by the sensor can be tuned with the `inter_packet_delay_us`
-and `pixels_per_packet` option. It is best to increase the `pixels_per_packet`
-to the highest possible allowed by your network setup. The `pixels_per_packet`
-plus an extra 100 byte margin needs to be lower than the MTU of your network
-(`pixels_per_packet` + 100 < MTU).
+The peak bandwidth used by the Alphasense Core can be set with the `peak_bandwidth_limit_mbps` parameter.
+
+The Alphasense Core packet size can be set with the `pixels_per_packet` option.
+It is best to increase the `pixels_per_packet` to the highest possible allowed by your network setup (The maximum is 7200).
+
+> :information_source: **Info**: The MTU of the network card to which the Alphasense Core is connected needs to be at least `pixels_per_packet` + 60, otherwise the driver cannot receive the image stream packets. In that case you will get "Image receive timed out." errors.
+
+See [Maximize network performance](/pages/maximize_network_performance.md) for more information. 

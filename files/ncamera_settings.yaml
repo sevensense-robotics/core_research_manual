@@ -28,10 +28,10 @@ ncamera:
   imu_frequency_hz: 200             # 100/200/400
   gyro_range_deg_per_sec: 2000      # 125/250/500/1000/2000
 
-
   # Network tuning parameters.
-  inter_packet_delay_us: 1          # 0 - 200
   pixels_per_packet: 1440           # Needs to be a divisor of the image resolution (height*width).
+  peak_bandwidth_limit_mbps: 1000.0 # 125 - 1000
+  image_socket_receive_buffer_size_mb: 10.0 # 1 - 100
 
   # Number of enabled cameras and individual camera configuration.
   num_cams: 5                       # 1 - 8
