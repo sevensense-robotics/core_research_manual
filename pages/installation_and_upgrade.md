@@ -23,6 +23,9 @@ sudo apt install curl
 curl -Ls https://deb.7sr.ch/pubkey.gpg | sudo apt-key add -  
 ```
 
+
+> :information_source: **Info**: When using special certificates supplied by Sevensense, make sure that they are up-to-date. Expired certificates will cause authentication errors even though this repository is public.
+
 Then you need to add the repository from the list above to your APT configuration.
 
 ```console

@@ -12,6 +12,7 @@ Here you will find further information on the following topics:
 - [Sensor settings](pages/sensor_settings.md)
 - [ROS driver usage](pages/ros_driver_usage.md)
 - [Configuring the network](pages/configuring_the_network.md)
+- [Time synchronization](pages/time_synchronization.md)
 - [Calibration](pages/calibration.md)
 - [Usage Examples](pages/usage_examples.md)
 - [Maximize network performance](pages/maximize_network_performance.md)
