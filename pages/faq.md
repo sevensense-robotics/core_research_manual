@@ -12,6 +12,8 @@ your request.
 - [How do I change the IP address of the sensor?](#how-do-i-change-the-ip-address-of-the-sensor)
 - [Can I synchronize the internal clock of the Alphasense Core to an external system?](#can-i-synchronize-the-internal-clock-of-the-alphasense-core-to-an-external-system)
 - [How do I fix "Image receive timed out"?](#how-do-i-fix-image-receive-timed-out)
+- [Why is my Alphasense Core not detected?](#why-is-my-alphasense-core-not-detected)
+
 
 ## I would like to mount Alphasense Core on my robot, what should I consider?
 
@@ -79,7 +81,7 @@ The IP can be changed by following the instructions in
 ## Can I synchronize the internal clock of the Alphasense Core to an external system?
 
 Yes, the Alphasense Core supports the PTP (Precision Time Protocol) protocol to synchronize the internal clock over the
-ethernet connection. An example for this will be published soon.
+ethernet connection. Follow the instructions in [Synchronized time](/pages/time_synchronization.md#time-synchronization) to set this up.
 
 ## How do I fix "Image receive timed out"?
 
@@ -90,3 +92,29 @@ The "Image receive timed out" means that the driver is not receiving image strea
 * The Alphasense Core is configured to send data to a different host IP, this can be checked with `alphasense show -`.
 * There is another driver running. Only one driver can be running at a time.
 * The `pixels_per_packet` setting is set higher than the MTU of the network interface. See [Network interface MTU](/pages/maximize_network_performance.md#network-interface-mtu).
+
+
+## Why is my Alphasense Core not detected?
+
+When the Alphasense Core is not detected with `alphasense list`, check the following points:
+
+* The Alphasense Core is powered, there should be a green LED blinking directly on the main PCB behind the ethernet connector.
+* There is an active ethernet connection. There should be two LEDs on the ethernet port, one should be lit constantly, the other blinking.
+* The network profile you created is activated. It is easiest to verify this by running `ip address` in the terminal and check if the interface has the correct IP address assigned.
+* The firewall is disabled.
+* No network related errors are printed in `dmesg`.
+
+When the above points do not solve the problem. A conflicting network configuration is often the problem. Double check all custom network configuration.
+
+To check that the Alphasense Core is actually sending out packets `tcpdump` can be used (`INTERFACE_NAME` should be replaced with the name of the interface the Alphasense Core is connected to):
+
+```console
+sevensense@7s-workstation:~$ sudo tcpdump -i INTERFACE_NAME udp port 5349 -vv -nn -n
+tcpdump: listening on enp5s0, link-type EN10MB (Ethernet), capture size 262144 bytes
+11:22:56.792794 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto UDP (17), length 221)
+    192.168.77.77.5349 > 255.255.255.255.5349: [no cksum] UDP, length 193
+11:22:56.912826 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto UDP (17), length 221)
+    192.168.77.77.5349 > 255.255.255.255.5349: [no cksum] UDP, length 193
+11:22:57.032827 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto UDP (17), length 221)
+    192.168.77.77.5349 > 255.255.255.255.5349: [no cksum] UDP, length 193
+```

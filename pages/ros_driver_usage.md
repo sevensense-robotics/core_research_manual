@@ -42,4 +42,4 @@ Images are published using the `image_transport` package. The topics published d
 * **~device_serial** (*string, default: ""*)  
   When this is set the driver will only connect to a specific Alphasense Core. If left empty the driver will connect to the first one it can find.
 * **~translate_device_time** (*bool, default: True*)  
-  Translate the internal Alphasense Core clock to the host clock using [`cuckoo_time_translator`](https://github.com/ethz-asl/cuckoo_time_translator). This should be disabled when the internal Alphasense Core clock is synchronized to the host using PTP.
+  Translate the internal Alphasense Core clock to the host clock using [`cuckoo_time_translator`](https://github.com/ethz-asl/cuckoo_time_translator). This should be disabled when the internal Alphasense Core clock is synchronized to the host using PTP (see [Synchronized time](/pages/time_synchronization.md#synchronized-time-ptp)).
