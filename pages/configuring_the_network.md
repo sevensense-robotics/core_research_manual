@@ -118,7 +118,7 @@ Device information:
  cam6_id                     not-connected
  cam7_id                     not-connected
  firmware_version            125389894
- fpga_device_id              3A1319969034225F
+ serial_number               3A1319969034225F
  fpga_size                   35
  fpga_temperature_degrees_c  49
  image_sensor_type           IMX287

@@ -13,6 +13,7 @@ your request.
 - [Can I synchronize the internal clock of the Alphasense Core to an external system?](#can-i-synchronize-the-internal-clock-of-the-alphasense-core-to-an-external-system)
 - [How do I fix "Image receive timed out"?](#how-do-i-fix-image-receive-timed-out)
 - [Why is my Alphasense Core not detected?](#why-is-my-alphasense-core-not-detected)
+- [How do I find the serial number of my Alphasense Core?](#how-do-i-find-the-serial-number-of-my-alphasense-core)
 
 
 ## I would like to mount Alphasense Core on my robot, what should I consider?
@@ -117,4 +118,32 @@ tcpdump: listening on enp5s0, link-type EN10MB (Ethernet), capture size 262144 b
     192.168.77.77.5349 > 255.255.255.255.5349: [no cksum] UDP, length 193
 11:22:57.032827 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto UDP (17), length 221)
     192.168.77.77.5349 > 255.255.255.255.5349: [no cksum] UDP, length 193
+```
+
+## How do I find the serial number of my Alphasense Core?
+
+The serial number of the Alphasense Core can be found by connecting it to a computer and running `alphasense show -`
+
+The serial number in the example below is `3A1319969034225F`.
+
+```
+sevensense@7s-workstation:~$ alphasense show -
+
+...
+
+Device information:
+ baseboard_imu_type          BMI085
+ cam0_id                     not-connected
+ cam1_id                     not-connected
+ cam2_id                     not-connected
+ cam3_id                     not-connected
+ cam4_id                     not-connected
+ cam5_id                     not-connected
+ cam6_id                     not-connected
+ cam7_id                     not-connected
+ firmware_version            125389894
+ serial_number               3A1319969034225F
+ fpga_size                   35
+ fpga_temperature_degrees_c  49
+ image_sensor_type           IMX287
 ```
