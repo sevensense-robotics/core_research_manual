@@ -33,6 +33,10 @@ ncamera:
   peak_bandwidth_limit_mbps: 1000.0 # 125 - 1000
   image_socket_receive_buffer_size_mb: 10.0 # 1 - 100
 
+  # PTP time synchronization parameters.
+  expect_ptp_time_synchronization: false
+  max_ptp_sync_lost_time_s: 60
+
   # Number of enabled cameras and individual camera configuration.
   num_cams: 5                       # 1 - 8
   cams:

@@ -6,7 +6,8 @@ The Alphasense Core driver binaries for Ubuntu are available from the Sevensense
   * AMD64 (Also known as x86_64) architecture: `deb [arch=amd64] https://deb.7sr.ch/alphasense bionic main`
   * ARM64 architecture: `deb [arch=arm64] https://deb.7sr.ch/alphasense bionic main`
 * **Ubuntu 20.04/ROS Noetic**
-  * Coming soon
+  * AMD64 (Also known as x86_64) architecture: `deb [arch=amd64] https://deb.7sr.ch/alphasense focal main`
+  * ARM64 architecture: `deb [arch=arm64] https://deb.7sr.ch/alphasense focal main`
   
 In case you do not know the architecture of your system, you can execute:
 
