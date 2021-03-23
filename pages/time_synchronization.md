@@ -38,6 +38,8 @@ The Alphasense Core will automatically start the synchronization when a PTP mast
 
 Time translation needs to be disabled for the internal clock time to be passed through correctly. See [Raw time](#raw-time) above on how to disable this. Note that raw and synchronized time are essentially the same from the point of view of the driver. It's the presence of a PTP master in the network that makes the device change its internal clock.
 
+To prevent the sensors streams from streaming before the internal clock is synchronized see [PTP sensor stream blocking](sensor_settings.md#ptp-sensor-stream-blocking) .
+
 ### Running a PTP master on linux
 
 In this example we use tools from the [linuxptp project](https://sourceforge.net/projects/linuxptp/). This example is just to quickly setup a functioning PTP master, please see the linuxptp documentation for more advanced command line flags.

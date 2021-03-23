@@ -127,11 +127,13 @@ Device information:
 ## Modifying persistent configuration
 
 Persistent configuration options like `device_ip` can be modified using the `alphasense set` command. 
-To for example change the sensors IP to `192.168.77.76` and the subnet mask to `255.255.0.0`, run the command below. 
+To for example change the sensors IP to `192.168.77.76` and the subnet mask to `255.255.0.0`, run the command below.
 
 ```
-alphasense set 3A1319969034225F device_ip 192.168.77.76 subnet_mask 255.255.0.0
+alphasense set 3A1319969034225F device_ip 192.168.77.76 subnet_mask 255.255.0.0 gateway_ip 192.168.77.1
 ```
+
+> :warning: **Warning**: **Network settings become active immediately.** It is therefore important that you change all desired network settings with one `alphasense set ...` call.
 
 When the sensors IP is changed an exception might be shown, this is because the
 sensor is not reachable anymore under the old IP.

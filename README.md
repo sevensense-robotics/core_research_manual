@@ -6,6 +6,9 @@ manufactured and distributed by [Sevensense](https://sevensense.ch/).
 
 ![alphasense](https://uploads-ssl.webflow.com/5e2ed3c886f41759e22ec3e3/5e618820f7d4594c1e0d82a8_image-64-compressor.png)
 
+**The manual assumes you are using driver and firmware version v2.0.**
+
+
 Here you will find further information on the following topics:
 
 - [Getting started](pages/getting_started.md)

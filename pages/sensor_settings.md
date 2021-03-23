@@ -161,3 +161,13 @@ It is best to increase the `pixels_per_packet` to the highest possible allowed b
 > :information_source: **Info**: The MTU of the network card to which the Alphasense Core is connected needs to be at least `pixels_per_packet` + 60, otherwise the driver cannot receive the image stream packets. In that case you will get "Image receive timed out." errors.
 
 See [Maximize network performance](/pages/maximize_network_performance.md) for more information. 
+
+### PTP sensor stream blocking
+
+The driver can be configured to not stream IMU and camera frames before the device successfully 
+synchronizes its clock. This prevents a big timestamp jump in the streams. 
+To enable this set `expect_ptp_time_synchronization` to `true`, by default this is set to `false`.
+
+To prevent timestamps from drifting apart when PTP synchronization is lost, a timeout can be set after which the driver
+blocks the streams. This timeout in seconds is configured with the `max_ptp_sync_lost_time_s` parameter. 
+By default this parameter is set to `60` seconds. The timeout mechanism can be disabled by setting this to `0`.
