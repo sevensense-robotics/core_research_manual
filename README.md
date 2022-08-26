@@ -1,13 +1,19 @@
 # Alphasense Core manual
 
+> **Warning**
+> This repository applies to **Alphasense Core**, a visual-inertial sensor. It **does not** apply to 
+> [**Alphasense Position**](https://www.sevensense.ai/product/alphasense-position), our
+> Visual SLAM system. Documentation of Alphasense Position is provided directly by the 
+> Sevensense Sales team.
+
 This is the manual for the Alphasense Core Development Kit, a state-of-the-art
 visual-inertial sensor providing spatial awareness with its 360° view.  It is
-manufactured and distributed by [Sevensense](https://sevensense.ch/).
+manufactured and distributed by [Sevensense](https://www.sevensense.ai/).
 
 ![alphasense](https://uploads-ssl.webflow.com/5e2ed3c886f41759e22ec3e3/5e618820f7d4594c1e0d82a8_image-64-compressor.png)
 
-**The manual assumes you are using driver and firmware version v2.0.**
-
+> **Note**
+> The manual assumes you are using driver and firmware version v2.10 or higher.
 
 Here you will find further information on the following topics:
 
@@ -22,8 +28,8 @@ Here you will find further information on the following topics:
 - [Installation and upgrading of driver/firmware](pages/installation_and_upgrade.md)
 - [GPIO Connector](pages/gpio_connector.md)
 - [Frequently asked questions](pages/faq.md)
-- [Datasheet](https://drive.google.com/file/d/1jtchd_72k5LA9qdVV072_Ejv8v45Vt52/view)
-- [CAD files](https://drive.google.com/drive/folders/1dcmHUA9mV2staRgssfHSONRsr9lItUdy?usp=sharing)
+- [Datasheet](https://hubs.ly/Q01kB1CV0)
+- [STEP 3D model file](files/alphasense_core_3d.zip)
 
 If you have any questions or feedback, please contact us at
 <support@sevensense.ch>.

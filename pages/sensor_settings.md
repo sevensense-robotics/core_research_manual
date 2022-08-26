@@ -68,6 +68,23 @@ adjusts how smooth the change in exposure time and consequently image
 brigthness is. However, when `autoexp_speed` is reduced, convergence is slowed
 down.
 
+#### Stereo pairs
+
+To make matching across stereo cameras more stable it helps to equalize the exposure of both cameras. This can be done in the Alphasense by running auto exposure for only one camera in the pair, and copy the result to the other camera. 
+
+A camera can be configured to copy the exposure parameters of another camera with the `autoexp_master_camera_index` parameter.
+
+```yaml
+ncamera:
+  # ...
+  cams:
+    0:
+      auto_exposure_enabled: true
+      # ...
+    1:
+      autoexp_master_camera_index: 0
+```
+
 ##### Setting the Region Of Interest (ROI)
 
 The auto exposure algorithm can be configured to only optimize brightness of a

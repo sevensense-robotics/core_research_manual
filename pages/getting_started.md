@@ -15,7 +15,7 @@ it by following these simple steps:
 > :information_source: **Info**: Have a look at the
   [Installation](/pages/installation_and_upgrade.md) page for a list of supported Ubuntu versions and processor architectures.
 
-Ubuntu 18.04 is required to install the driver. We also recommend installing ROS Melodic `desktop-full` ([ROS Melodic
+Ubuntu 18.04 or 20.04 is required to install the driver. We also recommend installing ROS Melodic/Noetic `desktop-full` ([ROS 
 installation](http://wiki.ros.org/melodic/Installation/Ubuntu)) A `ros-base` installation is sufficient, but we recommend
 the `desktop-full` to use the `rqt` GUI tools mentioned in other parts of
 this manual.
@@ -28,10 +28,10 @@ repository and installing the Alphasense driver contained therein.
 sudo apt install curl
 
 # Add the Sevensense PGP key to make this machine trust Sevensense's packages.
-curl -Ls https://deb.7sr.ch/pubkey.gpg | sudo apt-key add -
+curl -Ls http://deb.7sr.ch/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/deb-7sr-ch-keyring.gpg
 
 # Add the Sevensense APT repository to the list of known sources.
-echo "deb [arch=$(dpkg --print-architecture)] https://deb.7sr.ch/alphasense bionic main" \
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/deb-7sr-ch-keyring.gpg] http://deb.7sr.ch/alphasense/stable $(lsb_release -cs) main" \
           | sudo tee /etc/apt/sources.list.d/sevensense.list
 
 # Install the Alphasense driver.
