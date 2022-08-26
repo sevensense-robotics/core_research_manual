@@ -1,27 +1,18 @@
 # Installation
 
 The Alphasense Core driver binaries for Ubuntu are available from the Sevensense APT repositories.
+The packages are built for Ubuntu 18.04/ROS Melodic and Ubuntu 20.04/ROS Noetic, both for AMD64 (also known as x86_64) and ARM64 architectures.
 
-* **Ubuntu 18.04/ROS Melodic**
-  * AMD64 (Also known as x86_64) architecture: `deb [arch=amd64] https://deb.7sr.ch/alphasense bionic main`
-  * ARM64 architecture: `deb [arch=arm64] https://deb.7sr.ch/alphasense bionic main`
-* **Ubuntu 20.04/ROS Noetic**
-  * AMD64 (Also known as x86_64) architecture: `deb [arch=amd64] https://deb.7sr.ch/alphasense focal main`
-  * ARM64 architecture: `deb [arch=arm64] https://deb.7sr.ch/alphasense focal main`
-  
-In case you do not know the architecture of your system, you can execute:
+Please follow the instructions below for the installation procedure.
 
-```console
-dpkg --print-architecture
-```
-  
+
 ## Adding the repository
 
 First you need to trust the Sevensense key used to sign the packages.
 
 ```console
 sudo apt install curl
-curl -Ls https://deb.7sr.ch/pubkey.gpg | sudo apt-key add -  
+curl -Ls http://deb.7sr.ch/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/deb-7sr-ch-keyring.gpg
 ```
 
 
@@ -30,7 +21,7 @@ curl -Ls https://deb.7sr.ch/pubkey.gpg | sudo apt-key add -
 Then you need to add the repository from the list above to your APT configuration.
 
 ```console
-echo "deb [arch=$(dpkg --print-architecture)] https://deb.7sr.ch/alphasense bionic main" \
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/deb-7sr-ch-keyring.gpg] http://deb.7sr.ch/alphasense/stable $(lsb_release -cs) main" \
           | sudo tee /etc/apt/sources.list.d/sevensense.list
 sudo apt update
 ```

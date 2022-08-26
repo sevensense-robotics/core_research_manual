@@ -41,7 +41,9 @@ ncamera:
   num_cams: 5                       # 1 - 8
   cams:
     0: *standard_camera_config
-    1: *standard_camera_config
+    1:
+      # Force exposure parameters of stereo-pairs to be equal.
+      autoexp_master_camera_index: 0
     2: *standard_camera_config
     3: *standard_camera_config
     4: *standard_camera_config
