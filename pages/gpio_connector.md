@@ -1,6 +1,6 @@
-# Alphasense Core GPIO Functions
+# Core Research GPIO Functions
 
-The Alphasense Core has a GPIO connector that can be used for several different functions. On a standard Alphasense Core all extra functions are disabled, contact support@sevensense.ch for function activation keys.
+The Core Research has a GPIO connector that can be used for several different functions. On a standard Core Research all extra functions are disabled, contact support@sevensense.ch for function activation keys.
 
 **Currently supported functions**
 * [External Exposure Signal](#external-exposure-signal): GPIO1 Will go high when the camera with the longest exposure time starts its exposure, and will go low again when that camera finishes its exposure. In other words, the pulse on the GPIO1 pin will cover the exposure of all cameras.
@@ -9,7 +9,7 @@ The voltage for all GPIO pins is 3.3V for a logic 1 and 0V for a logic 0.
 
 ## The Connector
 
-Two versions of the connector exists. The older Alphasense Core models have an 8 pin connector, the newer ones have a 10 pin connector. At the moment they both support the same extensions.
+Two versions of the connector exists. The older Core Research models have an 8 pin connector, the newer ones have a 10 pin connector. At the moment they both support the same extensions.
 
 ### 10 pin (new version)
 

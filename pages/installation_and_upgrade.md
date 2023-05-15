@@ -1,6 +1,6 @@
 # Installation
 
-The Alphasense Core driver binaries for Ubuntu are available from the Sevensense APT repositories.
+The Core Research driver binaries for Ubuntu are available from the Sevensense APT repositories.
 The packages are built for Ubuntu 18.04/ROS Melodic and Ubuntu 20.04/ROS Noetic, both for AMD64 (also known as x86_64) and ARM64 architectures.
 
 Please follow the instructions below for the installation procedure.
@@ -53,13 +53,13 @@ The newest firmware can be flashed using the flashing tool included in the drive
 
 Follow these steps to upgrade to the newest firmware and driver:
 
-> :warning: **Warning**: Do not unplug the power to the Alphasense Core while flashing is in progress. This can brick the device.
+> :warning: **Warning**: Do not unplug the power to the Core Research while flashing is in progress. This can brick the device.
 
 1. Upgrade the driver and firmware packages
    ```console
    sudo apt install alphasense-driver-core alphasense-viewer alphasense-firmware ros-melodic-alphasense-driver-ros
    ```
-2. Connect **ONLY ONE** Alphasense Core to the host.
+2. Connect **ONLY ONE** Core Research to the host.
 3. Run the upgrade utility, and confirm the upgrade.
    
    ```console

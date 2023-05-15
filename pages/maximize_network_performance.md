@@ -1,6 +1,6 @@
 # Maximize network performance
 
-To maximize the performance of the Alphasense Core some default configuration
+To maximize the performance of the Core Research some default configuration
 options need to be changed. Network packet drop and therefore frame drops 
 can be eliminated by following the guidelines below.
 
@@ -8,7 +8,7 @@ The guidelines are split into the following three categories:
 
 1. Hardware setup
 2. Kernel and network configuration
-3. Alphasense Core configuration
+3. Core Research configuration
 
 ## Hardware setup
 
@@ -20,13 +20,13 @@ They will work but aren't as reliable and might drop frames.
 Some embedded platforms like for example the NVidia Jetson TX2 cannot reliably support
 the full gigabit bandwidth on their integrated ethernet ports and will have a reduced maximum frame rate.
 
-If the Alphasense Core is connected over a switch, make sure that it supports 
+If the Core Research is connected over a switch, make sure that it supports 
 gigabit ethernet speeds. When multiple devices are connected to the switch and the 
-Alphasense Core is sharing bandwidth with other sensors, a part of the bandwidth 
-will need to be reserved for the Alphasense Core. The achievable maximum frame rate will 
-depend on the amount of bandwidth reserved for the Alphasense Core. Note that this reserved
+Core Research is sharing bandwidth with other sensors, a part of the bandwidth 
+will need to be reserved for the Core Research. The achievable maximum frame rate will 
+depend on the amount of bandwidth reserved for the Core Research. Note that this reserved
 bandwidth needs to be configured as the peak bandwidth limit, 
-see [Alphasense Core configuration](/pages/maximize_network_performance.md#alphasense-core-configuration).
+see [Core Research configuration](/pages/maximize_network_performance.md#alphasense-core-configuration).
 
 The graphs below show the maximum achievable frame rate for a give number of sensors 
 and amount of reserved bandwidth.
@@ -36,7 +36,7 @@ and amount of reserved bandwidth.
 ![nm_connection_editor](/images/alphasense_core_16mp_bandwidth.png)
 
 Correct cabling that supports gigabit ethernet speeds must be used in the network 
-between the host and the Alphasense Core. In most cases this means CAT5e or CAT6 cables.
+between the host and the Core Research. In most cases this means CAT5e or CAT6 cables.
 
 ## Kernel and network configuration
 
@@ -93,7 +93,7 @@ of the ring sizes. Otherwise it can be added to a script that runs on boot.
 ### Network interface MTU
 
 The last thing to configure is the Maximum Transmission Unit (MTU) of the network interface.
-This needs to be increased to 7260 to allow for the maximum packet size supported by the Alphasense Core.
+This needs to be increased to 7260 to allow for the maximum packet size supported by the Core Research.
 
 ```console
 sudo ip link set INTERFACE_NAME mtu 7260 
@@ -102,9 +102,9 @@ sudo ip link set INTERFACE_NAME mtu 7260
 This setting does also not persist across reboots and needs to be configured in the 
 network manager or a startup script.
 
-## Alphasense Core configuration
+## Core Research configuration
 
-Three driver configuration parameters influence the network performance of the Alphasense Core
+Three driver configuration parameters influence the network performance of the Core Research
 `pixels_per_packet`, `image_socket_receive_buffer_size_mb`, and `peak_bandwidth_limit_mbps`.
 See [Sensor settings](/pages/sensor_settings.md) for instructions on how to supply the driver
 with these parameters.
@@ -123,8 +123,8 @@ be changed with (the value is in bytes):
 sudo sysctl -w net.core.rmem_max=11145728
 ```
 
-`peak_bandwidth_limit_mbps` sets the maximum peak bandwidth in megabits per second of the Alphasense Core.
+`peak_bandwidth_limit_mbps` sets the maximum peak bandwidth in megabits per second of the Core Research.
 This should be set to 1000, which means that it transfers the captured frames to the host at full gigabit speed.
 For some systems this can be too much and cause buffer overflows in lower levels of the network stack. In that
-case it can be tuned to a lower value at the cost of decreased maximum frame rate and higher transfer latency. This parameter also needs to be lowered when the Alphasense Core has to share the bandwidth
+case it can be tuned to a lower value at the cost of decreased maximum frame rate and higher transfer latency. This parameter also needs to be lowered when the Core Research has to share the bandwidth
 with other sensors or devices.

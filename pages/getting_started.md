@@ -1,6 +1,6 @@
-# Getting started with Alphasense Core
+# Getting started with Core Research
 
-Congratulations on your Alphasense Core 5-Camera Development Kit!  Start using
+Congratulations on your Core Research 5-Camera Development Kit!  Start using
 it by following these simple steps:
 
 ## What's in the box?
@@ -41,7 +41,7 @@ sudo apt install alphasense-driver-core alphasense-viewer alphasense-firmware ro
 
 ## Setting up the network configuration
 
-In order to connect your Alphasense Core device to your computer, a network
+In order to connect your Core Research device to your computer, a network
 configuration with a static IP needs to be set up.
 
 To set this up, open a terminal, launch the `nm-connection-editor` and add a

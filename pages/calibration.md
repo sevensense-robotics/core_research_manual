@@ -1,6 +1,6 @@
 # Calibration
 
-All Alphasense Core Development Kits come with factory intrinsic and extrinsic calibration. We provide this calibration on our servers in several file formats.
+All Core Research Development Kits come with factory intrinsic and extrinsic calibration. We provide this calibration on our servers in several file formats.
 The driver comes with a command to easily obtain the calibration files belonging to your sensor.
 
 ## Calibration model

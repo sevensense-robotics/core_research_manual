@@ -33,13 +33,13 @@ Images are published using the `image_transport` package. The topics published d
 * **/alphasense_driver_ros/aux_imu** (*sensor_msgs/Imu*)  
   IMU measurements of an optional external IMU.
 * **/alphasense_driver_ros/serial_number** (*std_msgs/String*)  
-  Serial number of the connected Alphasense Core.
+  Serial number of the connected Core Research.
   
 ### Parameters
 
 * **~ncamera_settings** (*string, default: ""*)  
   File path to a `ncamera_settings.yaml` configuration file. See [Sensor settings](/pages/sensor_settings.md) for more information about the format of this file. If left empty `rqt_reconfigure` support will be enabled, configuration can then be changed dynamically and is read from the ros parameter system.
 * **~device_serial** (*string, default: ""*)  
-  When this is set the driver will only connect to a specific Alphasense Core. If left empty the driver will connect to the first one it can find.
+  When this is set the driver will only connect to a specific Core Research. If left empty the driver will connect to the first one it can find.
 * **~translate_device_time** (*bool, default: True*)  
-  Translate the internal Alphasense Core clock to the host clock using [`cuckoo_time_translator`](https://github.com/ethz-asl/cuckoo_time_translator). This should be disabled when the internal Alphasense Core clock is synchronized to the host using PTP (see [Synchronized time](/pages/time_synchronization.md#synchronized-time-ptp)).
+  Translate the internal Core Research clock to the host clock using [`cuckoo_time_translator`](https://github.com/ethz-asl/cuckoo_time_translator). This should be disabled when the internal Core Research clock is synchronized to the host using PTP (see [Synchronized time](/pages/time_synchronization.md#synchronized-time-ptp)).

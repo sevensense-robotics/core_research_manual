@@ -151,7 +151,7 @@ maximum frame rates for each number of cameras with exposure at 10us, `inter_pac
 
 #### Absolute maximum frame rates in Hz/fps
 
-| Number of Cameras  | Alphasense Core (0.4 MP, Mono) | Alphasense Core (1.6 MP, Mono) |
+| Number of Cameras  | Core Research (0.4 MP, Mono) | Core Research (1.6 MP, Mono) |
 | --- | --- | ---|
 | 1 | 75 | 30 |
 | 2 | 75 | 30 |
@@ -170,12 +170,12 @@ higher will decrease the gyro sensitivity.
 
 ### Network tuning
 
-The peak bandwidth used by the Alphasense Core can be set with the `peak_bandwidth_limit_mbps` parameter.
+The peak bandwidth used by the Core Research can be set with the `peak_bandwidth_limit_mbps` parameter.
 
-The Alphasense Core packet size can be set with the `pixels_per_packet` option.
+The Core Research packet size can be set with the `pixels_per_packet` option.
 It is best to increase the `pixels_per_packet` to the highest possible allowed by your network setup (The maximum is 7200).
 
-> :information_source: **Info**: The MTU of the network card to which the Alphasense Core is connected needs to be at least `pixels_per_packet` + 60, otherwise the driver cannot receive the image stream packets. In that case you will get "Image receive timed out." errors.
+> :information_source: **Info**: The MTU of the network card to which the Core Research is connected needs to be at least `pixels_per_packet` + 60, otherwise the driver cannot receive the image stream packets. In that case you will get "Image receive timed out." errors.
 
 See [Maximize network performance](/pages/maximize_network_performance.md) for more information. 
 
