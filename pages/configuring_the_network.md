@@ -5,11 +5,11 @@ The network settings of the device can be configured using the command line tool
 ## Setting up the host computer
 
 The host computer (the computer you connect the sensor to) needs be assigned 
-a static IP address on the same subnet as the Alphasense Core. The steps for 
+a static IP address on the same subnet as the Core Research. The steps for 
 setting this up depends on how the networkis managed on the host. We provide 
 steps for a standard desktop Ubuntu setup and a standard server Ubuntu setup. 
 
-**Default Alphasense Core network settings**
+**Default Core Research network settings**
 
 | Setting  | Value |
 | ------------------- | ------------- |
@@ -19,7 +19,7 @@ steps for a standard desktop Ubuntu setup and a standard server Ubuntu setup.
 
 ### Setting up a static IP on Ubuntu desktop
 
-Follow the steps in the [Getting started with Alphasense Core](/pages/getting_started.md#setting-up-the-network-configuration) to configure
+Follow the steps in the [Getting started with Core Research](/pages/getting_started.md#setting-up-the-network-configuration) to configure
 the network through the Network Manager GUI in Ubuntu.
 
 ### Setting up a static IP on Ubuntu server
@@ -28,7 +28,7 @@ the network through the Network Manager GUI in Ubuntu.
 >being managed by a network manager like "NetworkManager" on Ubuntu desktop. In that case you 
 >have to consult the manual of the network manager on how to assign a static IP.
 
-First you need to figure out to which network interface the Alphasense Core is connected. A list of network interfaces can be obtained with
+First you need to figure out to which network interface the Core Research is connected. A list of network interfaces can be obtained with
 
 ```console
 ip link
@@ -67,19 +67,19 @@ We recommend looking at https://netplan.io/ for setting up a permanent network c
 
 ## Listing devices attached to the network
 
-Once the network is setup, a list of all Alphasense Core sensors attached to the network can be obtained with `alphasense list`.
+Once the network is setup, a list of all Core Research sensors attached to the network can be obtained with `alphasense list`.
 
 ```
 sevensense@7s-workstation:~$ alphasense list
 - Sevensense AS1 720x540 (sn: 3A1319969034225F i: as1-ethernet l: 192.168.1.128)
 ```
 
-The Alphasense Core sensors are identified by their serial number, 
+The Core Research sensors are identified by their serial number, 
 which for the sensor in the example above is *3A1319969034225F*.
 
-If your Alphasense Core does not show up in the list, the following should be checked:
+If your Core Research does not show up in the list, the following should be checked:
 
-1. Is the Alphasense Core powered on, and the ethernet cable connected?
+1. Is the Core Research powered on, and the ethernet cable connected?
 2. Is the LED on the sensor's ethernet port blinking? If not check the ethernet cable.
 3. Is your network configured correctly? In case of a new sensor check out the
 [Setting up the network configuration](/pages/getting_started.md#setting-up-the-network-configuration) 
@@ -87,7 +87,7 @@ section. You might have to reactivate the network profile after reconnecting the
 4. When you are not sure of the network configuration anymore, 
 see [Recovering a device with unknown network configuration](/pages/configuring_the_network.md#recovering-a-device-with-an-unknown-network-configuration).
 
-> :information_source: **Info**: The Alphasense Core does not respond to pings. This does not mean the device is broken.
+> :information_source: **Info**: The Core Research does not respond to pings. This does not mean the device is broken.
 
 ## Showing device information
 
@@ -144,7 +144,7 @@ terminate called after throwing an instance of 'alphasense::AS1NetworkException'
   what():  exchangeSettingsWithFpga maximum number of retries reached.
 ```
 
-The Alphasense Core sends the image streams to a preconfigured host IP.
+The Core Research sends the image streams to a preconfigured host IP.
 The factory default host IP is `192.168.77.78`. The command below can be used to change
 this host IP. In the example the host IP is changed to `192.168.77.177`
 
@@ -181,7 +181,7 @@ sevensense@7s-workstation:~$ alphasense list
 
 To be able to communicate with the device the host computer's network has to be configured with a 
 subnet that contains the IP of the device (`10.1.1.77`). It is recommended to set the host computer's 
-IP to either one IP higher or lower than the device in this case `10.1.1.76` or `10.1.1.78`. This new IP has to be set as host IP for the Alphasense Core using:
+IP to either one IP higher or lower than the device in this case `10.1.1.76` or `10.1.1.78`. This new IP has to be set as host IP for the Core Research using:
 
 ```
 alphasense set 3A1319969034324F host_ip 10.1.1.76

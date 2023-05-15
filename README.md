@@ -1,12 +1,12 @@
-# Alphasense Core manual
+# Core Research manual
 
 > **Warning**
-> This repository applies to **Alphasense Core**, a visual-inertial sensor. It **does not** apply to 
+> This repository applies to **Core Research**, a visual-inertial sensor. It **does not** apply to 
 > [**Alphasense Position**](https://www.sevensense.ai/product/alphasense-position), our
 > Visual SLAM system. Documentation of Alphasense Position is provided directly by the 
 > Sevensense Sales team.
 
-This is the manual for the Alphasense Core Development Kit, a state-of-the-art
+This is the manual for the Core Research Development Kit, a state-of-the-art
 visual-inertial sensor providing spatial awareness with its 360° view.  It is
 manufactured and distributed by [Sevensense](https://www.sevensense.ai/).
 

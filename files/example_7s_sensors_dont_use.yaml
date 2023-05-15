@@ -1,5 +1,5 @@
 # This file is an example calibration file, don't use this calibration file
-# for your own Alphasense Core.
+# for your own Core Research.
 ncameras:
   - cameras:
       - T_B_C:
