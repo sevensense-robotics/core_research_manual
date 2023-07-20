@@ -28,7 +28,7 @@ Here you will find further information on the following topics:
 - [Installation and upgrading of driver/firmware](pages/installation_and_upgrade.md)
 - [GPIO Connector](pages/gpio_connector.md)
 - [Frequently asked questions](pages/faq.md)
-- [Datasheet](https://hubs.ly/Q01kB1CV0)
+- [Datasheet](https://hubs.ly/Q01XVycm0)
 - [STEP 3D model file](files/alphasense_core_3d.zip)
 
 If you have any questions or feedback, please contact us at
