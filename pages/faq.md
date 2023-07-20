@@ -21,7 +21,7 @@ your request.
 In general, this depends on the application, but there are some common
 guidelines which should be considered:
 - First of all, please consult the
-  [datasheet](https://drive.google.com/file/d/1jtchd_72k5LA9qdVV072_Ejv8v45Vt52/view)
+  [datasheet](https://hubs.ly/Q01XVycm0)
   to find all relevant specifications such as the position of the mounting
   holes at the bottom, required power supply, or opening angles of the cameras.
 - Related to that: Mount the sensor at a position where none of the cameras
