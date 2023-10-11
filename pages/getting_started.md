@@ -5,10 +5,13 @@ it by following these simple steps:
 
 ## What's in the box?
 
-- **The sensor**: a development kit with 5 cameras and an IMU (synchronized)
-- **Ethernet cable (3m)**: for transferring the data
-- **AC adapter to sensor cable**: for powering the sensor
-- **12V 25W AC wall adapter** (230V Euro plug)
+- **The sensor:** a development kit with 5 cameras and an IMU (synchronized)
+- **Cable adapter** from the 2.1x5.5 mm Barrel Plug of the AC adapter to the Molex Nano-Fit connector of the sensor
+
+## What else is needed?
+
+- A **Category 6 (Cat6) Ethernet cable** to transfer the data to your device
+- A **12V 25W AC wall adapter** with a 2.1x5.5 mm Barrel Plug that mates to the adapter cable (eg. [CUI SWI25-12-E-P5 with an EU plug](https://www.mouser.ch/ProductDetail/490-SWI25-12-E-P5))
 
 ## Installing the driver
 
